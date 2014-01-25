@@ -4,7 +4,7 @@ var $gwt_version = "2.5.1";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = 'C3FB56B8607B373948E1311F6C81C9A6';
+var $strongName = 'B3CC0597D17FF1AE222CC63C82678FE1';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'test',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -4435,58 +4435,6 @@ function equalsWithNullCheck(a, b){
   return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
 }
 
-function $abstimmungsbox(this$static, line){
-  var bla, button_ent, button_ja, button_keine, button_nein, button_sitzung, button_ueber, decoPanel, hPanel, myLabel, myLabel1, myLabel2, vPanel;
-  vPanel = new VerticalPanel_0;
-  vPanel.table['cellSpacing'] = 15;
-  myLabel = new Label_0('Top ' + line[1]);
-  myLabel1 = new Label_0(line[2]);
-  myLabel2 = new Label_0(line[3]);
-  $add_2(vPanel, myLabel);
-  $add_2(vPanel, myLabel1);
-  if ($usertoint(this$static.redmineuser) != 0 && $equals(line[$usertoint(this$static.redmineuser)], 'Noch nicht abgestimmt')) {
-    hPanel = new FlowPanel_0;
-    button_ja = new Button_0;
-    $setInnerText(button_ja.element, 'Zustimmung');
-    $addDomHandler(button_ja, new Test$myButtonClickHandler_0(this$static, line[0], 'Daf\xFCr'), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
-    $equals(line[4], 'Daf\xFCr') && setStylePrimaryName(button_ja.element, 'gwt-orange-Button');
-    button_ent = new Button_0;
-    $addDomHandler(button_ent, new Test$myButtonClickHandler_0(this$static, line[0], 'Enthaltung'), TYPE);
-    $setInnerText(button_ent.element, 'Enthaltung');
-    $equals(line[4], 'Enthaltung') && setStylePrimaryName(button_ent.element, 'gwt-orange-Button');
-    button_nein = new Button_0;
-    $addDomHandler(button_nein, new Test$myButtonClickHandler_0(this$static, line[0], 'Dagegen'), TYPE);
-    $setInnerText(button_nein.element, 'Ablehnung');
-    $equals(line[4], 'Dagegen') && setStylePrimaryName(button_nein.element, 'gwt-orange-Button');
-    button_ueber = new Button_0;
-    $addDomHandler(button_ueber, new Test$myButtonClickHandler_0(this$static, line[0], 'Zustimmung zur \xDCberweisung'), TYPE);
-    $setInnerText(button_ueber.element, 'Zustimmung \xDCberweisung');
-    $equals(line[4], 'Zustimmung zur \xDCberweisung') && setStylePrimaryName(button_ueber.element, 'gwt-orange-Button');
-    button_sitzung = new Button_0;
-    $addDomHandler(button_sitzung, new Test$myButtonClickHandler_0(this$static, line[0], 'Sitzungsdienst'), TYPE);
-    $setInnerText(button_sitzung.element, 'Sitzungsdienst');
-    button_keine = new Button_0;
-    $addDomHandler(button_keine, new Test$myButtonClickHandler_0(this$static, line[0], 'Nimmt nicht Teil'), TYPE);
-    $setInnerText(button_keine.element, 'keine Teilnahme');
-    $add(hPanel, button_ja, hPanel.element);
-    $add(hPanel, button_ent, hPanel.element);
-    $add(hPanel, button_nein, hPanel.element);
-    $add(hPanel, button_sitzung, hPanel.element);
-    $add(hPanel, button_keine, hPanel.element);
-    $add(hPanel, button_ueber, hPanel.element);
-    $add_2(vPanel, hPanel);
-  }
-   else {
-    bla = new Label_0('Deine Abstimmung: ' + line[$usertoint(this$static.redmineuser)]);
-    $add_2(vPanel, bla);
-  }
-  $add_2(vPanel, myLabel2);
-  decoPanel = new DecoratorPanel_0;
-  $add_1(decoPanel, vPanel);
-  decoPanel.element.style['width'] = '400px';
-  return decoPanel;
-}
-
 function $einstellungen(this$static){
   var apiLabel, buttonSpeichern, decoPanel, userLabel, vPanel;
   this$static.redmineuser = getCookie('redmineuser');
@@ -4674,14 +4622,14 @@ function $usertoredminecustomfieldid(user){
 }
 
 function $verarbeitestring(this$static, alles){
-  var durch, vPanel, zeile, zeilen;
+  var durch, vPanel, zeile, zeilen, vPanel_0, myLabel, myLabel1, myLabel2, hPanel, button_ja, button_ent, button_nein, button_ueber, button_sitzung, button_keine, bla, decoPanel;
   zeilen = $split(alles, '\n', 0);
   vPanel = new VerticalPanel_0;
   try {
     durch = 1;
     while (durch < zeilen.length) {
       zeile = $split(zeilen[durch], ';', 0);
-      $add_2(vPanel, $abstimmungsbox(this$static, zeile));
+      $add_2(vPanel, (vPanel_0 = new VerticalPanel_0 , vPanel_0.table['cellSpacing'] = 15 , myLabel = new Label_0('Top ' + zeile[1]) , myLabel1 = new Label_0(zeile[2]) , myLabel2 = new Label_0(zeile[3]) , $add_2(vPanel_0, myLabel) , $add_2(vPanel_0, myLabel1) , hPanel = new FlowPanel_0 , button_ja = new Button_0 , $setInnerText(button_ja.element, 'Zustimmung') , $addDomHandler(button_ja, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Daf\xFCr'), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE)) , $equals(zeile[4], 'Daf\xFCr') && setStylePrimaryName(button_ja.element, 'gwt-orange-Button') , button_ent = new Button_0 , $addDomHandler(button_ent, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Enthaltung'), TYPE) , $setInnerText(button_ent.element, 'Enthaltung') , $equals(zeile[4], 'Enthaltung') && setStylePrimaryName(button_ent.element, 'gwt-orange-Button') , button_nein = new Button_0 , $addDomHandler(button_nein, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Dagegen'), TYPE) , $setInnerText(button_nein.element, 'Ablehnung') , $equals(zeile[4], 'Dagegen') && setStylePrimaryName(button_nein.element, 'gwt-orange-Button') , button_ueber = new Button_0 , $addDomHandler(button_ueber, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Zustimmung zur \xDCberweisung'), TYPE) , $setInnerText(button_ueber.element, 'Zustimmung \xDCberweisung') , $equals(zeile[4], 'Zustimmung zur \xDCberweisung') && setStylePrimaryName(button_ueber.element, 'gwt-orange-Button') , button_sitzung = new Button_0 , $addDomHandler(button_sitzung, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Sitzungsdienst'), TYPE) , $setInnerText(button_sitzung.element, 'Sitzungsdienst') , button_keine = new Button_0 , $addDomHandler(button_keine, new Test$myButtonClickHandler_0(this$static, zeile[0], 'Nimmt nicht Teil'), TYPE) , $setInnerText(button_keine.element, 'keine Teilnahme') , $add(hPanel, button_ja, hPanel.element) , $add(hPanel, button_ent, hPanel.element) , $add(hPanel, button_nein, hPanel.element) , $add(hPanel, button_sitzung, hPanel.element) , $add(hPanel, button_keine, hPanel.element) , $add(hPanel, button_ueber, hPanel.element) , $add_2(vPanel_0, hPanel) , bla = new Label_0('Deine Abstimmung: ' + zeile[$usertoint(this$static.redmineuser)]) , $add_2(vPanel_0, bla) , $add_2(vPanel_0, myLabel2) , decoPanel = new DecoratorPanel_0 , $add_1(decoPanel, vPanel_0) , decoPanel.element.style['width'] = '400px' , decoPanel));
       ++durch;
     }
   }
